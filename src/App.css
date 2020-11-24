@@ -5,6 +5,13 @@
   font-family: "Nunito", sans-serif;
 }
 
+.App {
+  width: 100vw;
+}
+
 body {
-  background: gray;
+  min-width: 100vw;
+  min-height: 100vh;
+  background: black;
+  display: flex;
 }

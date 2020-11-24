@@ -1,0 +1,23 @@
+.accordion {
+  min-width: 90vw;
+  padding: 2rem;
+  position: relative;
+}
+.accordion-header {
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 0.5rem 0.8rem;
+  margin: 0.3rem 0rem;
+  background-color: white;
+}
+
+.fix-top {
+  display: block;
+  /* position: absolute;
+  top: 0.5rem;
+  width: 90%; */
+}
+
+.accordion-body {
+  display: none;
+}

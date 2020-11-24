@@ -2,7 +2,6 @@ import React from "react";
 
 const Definition = ({ definition }) => {
   const { example, synonyms } = definition;
-  console.log(synonyms);
   return (
     <div className="definition">
       <div>
@@ -12,10 +11,12 @@ const Definition = ({ definition }) => {
       <div className="example">
         <span className="sub-heading">Example : </span> {example}
       </div>
-      <div class="synonyms">
-        <div class="sub-heading">Synonyms : </div>
-        {synonyms && synonyms.join(", ")}{" "}
-      </div>
+      {synonyms && (
+        <div className="synonyms">
+          <div className="sub-heading">Synonyms : </div>
+          {synonyms.join(", ")}
+        </div>
+      )}
     </div>
   );
 };

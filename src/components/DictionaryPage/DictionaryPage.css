@@ -1,3 +1,30 @@
+.search-form {
+  top: 0px;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  background-color: whitesmoke;
+  width: 100vw;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.search-form input {
+  height: 2rem;
+}
+
+.search-form label {
+  font-size: 1.8rem;
+  padding: 0rem 0.5rem;
+}
+
+.search-form button {
+  padding: 0.3rem 0.8rem;
+  margin: 0rem 0.5rem;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
 .sub-heading {
   font-weight: bold;
   font-size: large;
@@ -5,35 +32,32 @@
 
 .card {
   /* border: 1px solid black; */
-  background-color: honeydew;
-  padding: 1.5rem;
+  background-color: black;
+  color: white;
+  padding: 0.5rem;
   margin: 0.5rem;
-  max-width: 900px;
 }
 
 .phonetics {
   /* border: 1px solid blue; */
-  background-color: honeydew;
 
-  padding: 1.5rem;
+  padding: 0.5rem;
   display: flex;
-  align-items: center;
-  flex-direction: row;
+  /* align-items: center; */
+  flex-direction: column;
   flex-wrap: wrap;
-  /* justify-content: center; */
+  justify-content: center;
 }
 
 .meaning {
   /* border: 1px solid red; */
-  background-color: honeydew;
 
-  padding: 1.5rem;
+  padding: 0.5rem;
   margin-top: 1rem;
 }
 
 .definition {
   /* border: 1px solid green; */
-  background-color: honeydew;
 
   margin-top: 0.5rem;
 }

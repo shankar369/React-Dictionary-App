@@ -1,19 +1,21 @@
 import React from "react";
 
-const Phonetic = ({ phonetic }) => (
-  <div class="phonetics">
-    <div class="phonetics-text">{phonetic.text}</div>
-    <div class="phonetics-audio">
-      <audio
-        id="audio2"
-        src={phonetic.audio}
-        type="audio/mp3"
-        preload="auto"
-        autobuffer
-        controls
-      ></audio>
+const Phonetic = ({ phonetic }) =>
+  phonetic && (
+    <div className="phonetics">
+      <h1>Phonetics</h1>
+      <div className="phonetics-text">{phonetic.text}</div>
+      <div className="phonetics-audio">
+        <audio
+          id="audio2"
+          src={phonetic.audio}
+          type="audio/mp3"
+          preload="auto"
+          autobuffer="true"
+          controls
+        ></audio>
+      </div>
     </div>
-  </div>
-);
+  );
 
 export default Phonetic;
