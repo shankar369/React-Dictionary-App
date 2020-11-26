@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "../Card/Card";
 import { postMeaning } from "../../../api";
-import Loading from "../Loading/Loading";
 
 const SearchResult = ({ data, word, setData }) => (
   <div>
