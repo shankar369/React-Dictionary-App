@@ -3,17 +3,15 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import FormikControl from "../FormikControl";
 
-import { postMeaning } from "../../api";
-
-import Card from "./Card/Card";
-
-import "./DictionaryPage.css";
 import SavedMeanings from "./SavedMeanings/SavedMeanings";
 
-const url = "https://api.dictionaryapi.dev/api/v2/entries/en/";
-const axios = require("axios");
+import "./DictionaryPage.css";
+import SearchResult from "./SearchResult/SearchResult";
 
-function DictionaryPage({ savedMeanings }) {
+import { searchWord } from "../../api";
+import Loading from "./Loading/Loading";
+
+const DictionaryPage = ({ savedMeanings }) => {
   const [data, setData] = useState([]);
   const [word, setWord] = useState("");
 
@@ -25,36 +23,19 @@ function DictionaryPage({ savedMeanings }) {
   const validationSchema = Yup.object({
     word: Yup.string().required("Required"),
   });
-
-  const searchWord = (word) => {
-    axios
-      .get(`${url}${word}`)
-      .then(function (response) {
-        // handle success
-        // console.log("----------------");
-        // console.log(response.data);
-        setWordNotFound(false);
-        setData(response.data);
-      })
-      .catch(function (error) {
-        // handle error
-        setData([]);
-        setWordNotFound(true);
-        // console.log("-*******", error);
-      });
-  };
+  console.log(data, savedMeanings);
 
   const onSubmit = (values, onSubmitProps) => {
     console.log(values);
     setWordNotFound(false);
     setWord(values.word.trim());
-    searchWord(values.word.trim());
+    searchWord(values.word.trim(), setWordNotFound, setData);
     onSubmitProps.setSubmitting(false);
     onSubmitProps.resetForm();
   };
 
   return (
-    <>
+    <div className="main-page">
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -66,7 +47,7 @@ function DictionaryPage({ savedMeanings }) {
             <FormikControl
               control="input"
               type="text"
-              label="word"
+              placeholder="search meaning"
               name="word"
             />
             <button type="submit" disabled={!formik.isValid}>
@@ -75,20 +56,25 @@ function DictionaryPage({ savedMeanings }) {
           </Form>
         )}
       </Formik>
-      {savedMeanings.length !== 0 && (
+
+      {savedMeanings.length !== 0 && data.length === 0 && !wordNotFound ? (
         <SavedMeanings savedMeanings={savedMeanings} />
+      ) : (
+        data.length === 0 && !wordNotFound && <Loading />
       )}
-      {data.map((example, i) => (
-        <Card key={i} example={example} />
-      ))}
-      {data.length !== 0 && (
-        <button className="save" onClick={() => postMeaning({ word, data })}>
-          Save
-        </button>
+
+      <SearchResult word={word} data={data} setData={setData} />
+
+      {wordNotFound && (
+        <div className="word-not-found">
+          <div className="text">
+            No meanings found for the word{" "}
+            <span className="word">'{word}'</span>
+          </div>
+        </div>
       )}
-      {wordNotFound && <h1>No meanings found for the word '{word}'</h1>}
-    </>
+    </div>
   );
-}
+};
 
 export default DictionaryPage;

@@ -4,13 +4,19 @@ const Definition = ({ definition }) => {
   const { example, synonyms } = definition;
   return (
     <div className="definition">
-      <div>
-        <span className="sub-heading">Definition : </span>
-        {definition.definition}
-      </div>
-      <div className="example">
-        <span className="sub-heading">Example : </span> {example}
-      </div>
+      {definition.definition && (
+        <div>
+          <span className="sub-heading">Definition : </span>
+          {definition.definition}
+        </div>
+      )}
+
+      {example && (
+        <div className="example">
+          <span className="sub-heading">Example : </span> {example}
+        </div>
+      )}
+
       {synonyms && (
         <div className="synonyms">
           <div className="sub-heading">Synonyms : </div>
