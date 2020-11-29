@@ -15,3 +15,7 @@ body {
   background: black;
   display: flex;
 }
+
+button {
+  cursor: pointer;
+}

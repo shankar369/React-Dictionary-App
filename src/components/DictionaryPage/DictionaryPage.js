@@ -9,11 +9,11 @@ import "./DictionaryPage.css";
 import SearchResult from "./SearchResult/SearchResult";
 
 import { searchWord } from "../../api";
-import Loading from "./Loading/Loading";
 
-const DictionaryPage = ({ savedMeanings }) => {
+const DictionaryPage = ({ savedMeanings, setLoading }) => {
   const [data, setData] = useState([]);
   const [word, setWord] = useState("");
+  const [showSave, setShowSave] = useState(false);
 
   const [wordNotFound, setWordNotFound] = useState(false);
 
@@ -25,11 +25,17 @@ const DictionaryPage = ({ savedMeanings }) => {
   });
   console.log(data, savedMeanings);
 
-  const onSubmit = (values, onSubmitProps) => {
+  const onSubmit = async (values, onSubmitProps) => {
     console.log(values);
     setWordNotFound(false);
     setWord(values.word.trim());
-    searchWord(values.word.trim(), setWordNotFound, setData);
+    searchWord(
+      values.word.trim(),
+      setWordNotFound,
+      setData,
+      setLoading,
+      setShowSave
+    );
     onSubmitProps.setSubmitting(false);
     onSubmitProps.resetForm();
   };
@@ -57,13 +63,18 @@ const DictionaryPage = ({ savedMeanings }) => {
         )}
       </Formik>
 
-      {savedMeanings.length !== 0 && data.length === 0 && !wordNotFound ? (
+      {savedMeanings.length !== 0 && data.length === 0 && !wordNotFound && (
         <SavedMeanings savedMeanings={savedMeanings} />
-      ) : (
-        data.length === 0 && !wordNotFound && <Loading />
       )}
 
-      <SearchResult word={word} data={data} setData={setData} />
+      <SearchResult
+        word={word}
+        data={data}
+        setData={setData}
+        setLoading={setLoading}
+        showSave={showSave}
+        setShowSave={setShowSave}
+      />
 
       {wordNotFound && (
         <div className="word-not-found">

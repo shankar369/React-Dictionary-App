@@ -1,4 +1,5 @@
 import React from "react";
+import "./Definition.css";
 
 const Definition = ({ definition }) => {
   const { example, synonyms } = definition;
@@ -20,7 +21,7 @@ const Definition = ({ definition }) => {
       {synonyms && (
         <div className="synonyms">
           <div className="sub-heading">Synonyms : </div>
-          {synonyms.join(", ")}
+          {synonyms.join(",  ")}
         </div>
       )}
     </div>

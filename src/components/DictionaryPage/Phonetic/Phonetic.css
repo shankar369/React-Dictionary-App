@@ -1,0 +1,10 @@
+.phonetics {
+  /* border: 1px solid blue; */
+
+  padding: 0.5rem;
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}

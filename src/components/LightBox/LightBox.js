@@ -1,13 +1,10 @@
 import React from "react";
 import "./LightBox.css";
 
-function LightBox({ children, setMeaning }) {
+function LightBox({ children }) {
   return (
     <div className="lightBox">
       <div className="lightbox-container">{children}</div>
-      <div className="close-button" onClick={() => setMeaning([])}>
-        CLOSE
-      </div>
     </div>
   );
 }

@@ -4,11 +4,18 @@
   position: relative;
 }
 .accordion-header {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
   font-size: 1.5rem;
   font-weight: 500;
   padding: 0.5rem 0.8rem;
-  margin: 0.3rem 0rem;
-  background-color: white;
+  margin: 0.8rem 0rem;
+  background-color: black;
+  color: white;
+  /* box-shadow: 1px 1px 1px 1px white; */
+  box-shadow: 4px 0 3px -1px rgba(255, 255, 255, 0.9),
+    -4px 0 3px -1px rgba(255, 255, 255, 0.9);
 }
 
 .fix-top {
@@ -18,6 +25,19 @@
   width: 90%; */
 }
 
-.accordion-body {
-  display: none;
+.delete-icon:active {
+  color: red;
+}
+
+.close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  position: fixed;
+  bottom: 0rem;
+  cursor: pointer;
+  color: white;
+  font-size: x-large;
+  font-weight: bold;
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import Definition from "../Definition/Definition";
+import "./Meaning.css";
 
 const Meaning = ({ meaning }) => {
   const { partOfSpeech, definitions } = meaning;

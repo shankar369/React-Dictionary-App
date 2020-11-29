@@ -1,6 +1,7 @@
 import React from "react";
 import Phonetic from "../Phonetic/Phonetic";
 import Meaning from "../Meaning/Meaning";
+import "./Card.css";
 
 const Card = ({ example }) => {
   const { phonetics, meanings } = example;

@@ -7,13 +7,19 @@
   display: flex;
   flex-direction: row;
   padding: 1rem;
-  background-color: whitesmoke;
+  background-color: black;
+  color: white;
   width: 100vw;
   justify-content: center;
   align-items: baseline;
 }
 
 .search-form input {
+  font-size: large;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  background: none;
   height: 2rem;
   padding: 0.3rem;
 }
@@ -24,10 +30,16 @@
 }
 
 .search-form button {
-  padding: 0.3rem 0.8rem;
-  margin: 0rem 0.5rem;
+  color: white;
+  border: 0.1px solid lightgray;
+  background: none;
+  padding: 0.2rem 0.5rem;
+  margin: 0rem 0.8rem;
   font-weight: bold;
-  font-size: 0.8rem;
+  font-size: 1rem;
+  border: none;
+  box-shadow: 4px 0 3px -1px rgba(255, 255, 255, 0.9),
+    -4px 0 3px -1px rgba(255, 255, 255, 0.9);
 }
 
 .sub-heading {
@@ -35,44 +47,23 @@
   font-size: large;
 }
 
-.card {
-  /* border: 1px solid black; */
+/* .card {
   background-color: black;
   color: white;
   padding: 0.5rem;
   margin: 0.5rem;
-}
-
-.phonetics {
-  /* border: 1px solid blue; */
-
-  padding: 0.5rem;
-  display: flex;
-  /* align-items: center; */
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.meaning {
-  /* border: 1px solid red; */
-
-  padding: 0.5rem;
-  margin-top: 1rem;
-}
-
-.definition {
-  /* border: 1px solid green; */
-
-  margin-top: 0.5rem;
-}
+} */
 
 .button-group button {
   padding: 0.3rem 1rem;
   margin: 0rem 1rem;
   background: none;
-  background: white;
+  background: black;
+  color: white;
   font-size: 1rem;
+  border: none;
+  box-shadow: 4px 0 3px -1px rgba(255, 255, 255, 0.9),
+    -4px 0 3px -1px rgba(255, 255, 255, 0.9);
 }
 
 .word-not-found {
@@ -90,13 +81,4 @@
 
 .word-not-found span {
   font-size: xx-large;
-}
-
-.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: x-large;
-  font-weight: bold;
 }
