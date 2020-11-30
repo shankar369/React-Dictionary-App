@@ -12,6 +12,7 @@ export const searchWord = async (
   setLoading,
   setShowSave
 ) => {
+  word = word.toLowerCase();
   setLoading(true);
   const response = await axios.get(`${url}/${word}`);
   console.log(response, "************");
@@ -19,6 +20,7 @@ export const searchWord = async (
     setWordNotFound(false);
     setData(response.data[0].data);
     setLoading(false);
+    setShowSave(false);
   } else {
     axios
       .get(`${dictionaryApi}/${word}`)

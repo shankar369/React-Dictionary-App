@@ -8,3 +8,7 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.phonetics-text {
+  padding: 0.5rem;
+}

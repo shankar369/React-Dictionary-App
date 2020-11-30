@@ -1,0 +1,27 @@
+.search-result {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+}
+
+.search-data {
+  flex-grow: 1;
+  overflow: scroll;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.8rem;
+}
+
+.button-group button {
+  padding: 0.3rem 1rem;
+  background: none;
+  background: black;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  box-shadow: 4px 0 3px -1px rgba(255, 255, 255, 0.9),
+    -4px 0 3px -1px rgba(255, 255, 255, 0.9);
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "../Card/Card";
 import { postMeaning } from "../../../api";
+import "./SearchResult.css";
 
 const SearchResult = ({
   data,
@@ -9,12 +10,15 @@ const SearchResult = ({
   setLoading,
   showSave,
   setShowSave,
-}) => (
-  <div>
-    {data.map((example, i) => (
-      <Card key={i} example={example} />
-    ))}
-    {data.length !== 0 && (
+}) =>
+  data.length !== 0 && (
+    <div className="search-result">
+      <div className="search-data">
+        {data.map((example, i) => (
+          <Card key={i} example={example} />
+        ))}
+      </div>
+
       <div className="button-group">
         {showSave && (
           <button
@@ -25,8 +29,7 @@ const SearchResult = ({
         )}
         <button onClick={() => setData([])}>back</button>
       </div>
-    )}
-  </div>
-);
+    </div>
+  );
 
 export default SearchResult;

@@ -1,5 +1,5 @@
 .accordion {
-  min-width: 90vw;
+  width: 100vw;
   padding: 2rem;
   position: relative;
 }
@@ -17,6 +17,13 @@
   box-shadow: 4px 0 3px -1px rgba(255, 255, 255, 0.9),
     -4px 0 3px -1px rgba(255, 255, 255, 0.9);
 }
+.word {
+  flex-grow: 1;
+}
+
+.delete-icon:active {
+  color: red;
+}
 
 .fix-top {
   display: block;
@@ -25,19 +32,40 @@
   width: 90%; */
 }
 
-.delete-icon:active {
-  color: red;
+.lightbox-word {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
-.close-button {
+.lightbox-data {
+  flex-grow: 1;
+  overflow: scroll;
+}
+
+.close {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
-  position: fixed;
-  bottom: 0rem;
+  padding: 0.5rem;
   cursor: pointer;
   color: white;
   font-size: x-large;
   font-weight: bold;
+}
+
+.close button {
+  color: white;
+  border: 0.1px solid lightgray;
+  background: none;
+  padding: 0.2rem 0.5rem;
+  margin: 0rem 0.8rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  box-shadow: 4px 0 3px -1px rgba(255, 255, 255, 0.9),
+    -4px 0 3px -1px rgba(255, 255, 255, 0.9);
 }

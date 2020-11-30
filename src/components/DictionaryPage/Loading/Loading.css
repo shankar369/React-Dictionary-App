@@ -6,11 +6,10 @@
   left: 0;
   min-height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 1);
   align-items: center;
   justify-content: center;
   z-index: 10;
-  overflow: scroll;
 }
 
 .loading {
