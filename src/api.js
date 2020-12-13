@@ -1,8 +1,8 @@
 // const base_url = "https://safe-shelf-36413.herokuapp.com";
 import axios from "axios";
 
-const url = "https://safe-shelf-36413.herokuapp.com/api/dictionary";
-// const url = "http://localhost:5000/api/dictionary";
+// const url = "https://safe-shelf-36413.herokuapp.com/api/dictionary";
+const url = "http://localhost:5000/api/dictionary";
 const dictionaryApi = "https://api.dictionaryapi.dev/api/v2/entries/en";
 
 export const searchWord = async (
@@ -73,4 +73,25 @@ export const postMeaning = async (data, setLoading, setShowSave) => {
       console.log("***", error);
       setLoading(false);
     });
+};
+
+export const deleteMeaning = async (word, setLoading, setDeleteWord) => {
+  setLoading(true);
+  const response = await axios.delete(`${url}/${word}`);
+  console.log(response, "************");
+  if (response.data[0]) {
+    console.log("deleted");
+    setLoading(false);
+    setDeleteWord("");
+  } else {
+    console.log("not deleted");
+  }
+};
+
+const getLocalStorage = (key) => {
+  localStorage.getItem(key);
+};
+
+const setLocalStorage = (key, value) => {
+  localStorage.setItem(key, value);
 };

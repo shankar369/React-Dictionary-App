@@ -4,12 +4,11 @@ import Card from "../Card/Card";
 import "./SavedMeanings.css";
 import { MdDeleteForever } from "react-icons/md";
 
-function SavedMeanings({ savedMeanings }) {
-  const [meaning, setMeaning] = useState([]);
+import ConfirmationPopup from "../ConfirmationPopup/ConfirmationPopup";
 
-  const handleDelete = (word) => {
-    console.log(word, "deleted");
-  };
+function SavedMeanings({ savedMeanings, setLoading }) {
+  const [meaning, setMeaning] = useState([]);
+  const [deleteWord, setDeleteWord] = useState("");
 
   const lightBox = () =>
     meaning.length !== 0 && (
@@ -37,12 +36,17 @@ function SavedMeanings({ savedMeanings }) {
               {meaning.word}
             </div>
             <MdDeleteForever
-              onClick={() => handleDelete(meaning.word)}
+              onClick={() => setDeleteWord(meaning.word)}
               className="delete-icon"
             />
           </div>
         </div>
       ))}
+      <ConfirmationPopup
+        word={deleteWord}
+        setDeleteWord={setDeleteWord}
+        setLoading={setLoading}
+      />
       {lightBox()}
     </div>
   );

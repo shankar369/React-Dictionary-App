@@ -1,6 +1,6 @@
 .accordion {
   width: 100vw;
-  padding: 2rem;
+  padding: 1rem 1.5rem;
   position: relative;
 }
 .accordion-header {

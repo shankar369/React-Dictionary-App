@@ -1,0 +1,36 @@
+.pagination {
+  width: 100%;
+  bottom: 0px;
+  padding: 0.5rem;
+}
+
+.pagination ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination a {
+  color: black;
+  font-weight: bold;
+}
+
+.pagination ul li {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.4rem 0.8rem;
+  margin: 0.2rem 0.2rem;
+  background: white;
+}
+
+.pagination .selected {
+  background-color: black;
+  border: 1px solid white;
+  color: black;
+}
+
+.pagination .selected a {
+  font-weight: bold;
+  color: white;
+}
