@@ -14,12 +14,14 @@
 .App {
   display: flex;
   flex-direction: column;
+  padding-bottom: 1.5rem;
   width: 100vw;
   height: 100vh;
 }
 
 .dictionary-page {
   overflow: scroll;
+  flex-grow: 1;
 }
 
 body {
@@ -34,6 +36,9 @@ button {
 }
 
 @media screen and (max-width: 500px) {
+  html {
+    font-size: 100%;
+  }
   .pagination {
     font-size: 60%;
     padding: 0.5rem 0rem !important;

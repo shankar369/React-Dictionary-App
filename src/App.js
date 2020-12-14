@@ -18,15 +18,27 @@ function App() {
   const [data, setData] = useState([]);
   const [word, setWord] = useState("");
   const [showSave, setShowSave] = useState(false);
+  const [totalPages, setTotalPages] = useState(1);
+  const [currentPage, setCurrentPage] = useState(
+    parseInt(sessionStorage.getItem("current_page")) || 0
+  );
+  const limit = 10;
 
   const [wordNotFound, setWordNotFound] = useState(false);
-
   useEffect(() => {
-    getMeanings(setSavedMeanings, setLoading);
-  }, []);
+    getMeanings(
+      limit,
+      setSavedMeanings,
+      setTotalPages,
+      setLoading,
+      currentPage
+    );
+  }, [currentPage]);
+
   const handleMouseUp = () => {
     setSelectedText(window.getSelection().toString());
   };
+
   return (
     <div className="App" onMouseUp={handleMouseUp}>
       {/* <Helmet>
@@ -54,12 +66,23 @@ function App() {
           showSave={showSave}
           setShowSave={setShowSave}
         />
-        <WordNotFound wordNotFound={wordNotFound} word={word} />
+        <WordNotFound
+          wordNotFound={wordNotFound}
+          setWordNotFound={setWordNotFound}
+          word={word}
+        />
         {loading && <Loading />}
       </div>
-      <div>
-        <Paginate pageCount={10} />
-      </div>
+
+      {data.length === 0 && !wordNotFound && (
+        <div>
+          <Paginate
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            pageCount={totalPages}
+          />
+        </div>
+      )}
     </div>
   );
 }

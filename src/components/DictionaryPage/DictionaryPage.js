@@ -18,7 +18,11 @@ const DictionaryPage = ({
   return (
     <div className="main-page">
       {savedMeanings.length !== 0 && data.length === 0 && !wordNotFound && (
-        <SavedMeanings savedMeanings={savedMeanings} setLoading={setLoading} />
+        <SavedMeanings
+          savedMeanings={savedMeanings}
+          setLoading={setLoading}
+          setData={setData}
+        />
       )}
 
       <SearchResult

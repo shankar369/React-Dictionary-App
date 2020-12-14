@@ -2,9 +2,10 @@ import React from "react";
 import ReactPaginate from "react-paginate";
 import "./Paginate.css";
 
-function Paginate({ pageCount }) {
+function Paginate({ pageCount, currentPage, setCurrentPage }) {
   const handlePageChange = ({ selected }) => {
-    console.log(selected);
+    sessionStorage.setItem("current_page", selected);
+    setCurrentPage(selected);
   };
   return (
     <div className="pagination">
@@ -13,6 +14,7 @@ function Paginate({ pageCount }) {
         pageCount={pageCount}
         previousLabel="<"
         nextLabel=">"
+        forcePage={currentPage}
       />
     </div>
   );

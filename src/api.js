@@ -1,8 +1,8 @@
 // const base_url = "https://safe-shelf-36413.herokuapp.com";
 import axios from "axios";
 
-// const url = "https://safe-shelf-36413.herokuapp.com/api/dictionary";
-const url = "http://localhost:5000/api/dictionary";
+const url = "https://safe-shelf-36413.herokuapp.com/api/dictionary";
+// const url = "http://localhost:5000/api/dictionary";
 const dictionaryApi = "https://api.dictionaryapi.dev/api/v2/entries/en";
 
 export const searchWord = async (
@@ -43,14 +43,26 @@ export const searchWord = async (
   }
 };
 
-export const getMeanings = async (setSavedMeanings, setLoading) => {
-  // const params =  { sortBy: "word", limit: 8, sortOrder: -1 }
+export const getMeanings = async (
+  limit,
+  setSavedMeanings,
+  setTotalPages,
+  setLoading,
+  currentPage
+) => {
+  const params = { page: currentPage, limit };
   setLoading(true);
   axios
-    .get(url)
+    .get(url, { params })
     .then(function (response) {
       // handle success
-      setSavedMeanings(response.data);
+      console.log(response.data);
+      setSavedMeanings(response.data.meanings);
+      let PageCount = response.data.count / limit;
+      if (Number(PageCount) !== PageCount) {
+        PageCount = Math.floor(PageCount) + 1;
+      }
+      setTotalPages(PageCount);
       setLoading(false);
     })
     .catch(function (error) {
@@ -86,12 +98,4 @@ export const deleteMeaning = async (word, setLoading, setDeleteWord) => {
   } else {
     console.log("not deleted");
   }
-};
-
-const getLocalStorage = (key) => {
-  localStorage.getItem(key);
-};
-
-const setLocalStorage = (key, value) => {
-  localStorage.setItem(key, value);
 };
