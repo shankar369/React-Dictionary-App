@@ -35,12 +35,12 @@ function App() {
     );
   }, [currentPage]);
 
-  const handleMouseUp = () => {
+  const handleCapture = () => {
     setSelectedText(window.getSelection().toString());
   };
 
   return (
-    <div className="App" onMouseUp={handleMouseUp}>
+    <div className="App" onMouseUpCapture={handleCapture}>
       {/* <Helmet>
         <title>Personal Dictionary</title>
       </Helmet> */}
