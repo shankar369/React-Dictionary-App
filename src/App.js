@@ -43,7 +43,7 @@ function App() {
     <div
       className="App"
       onMouseUpCapture={handleCapture}
-      onTouchEnd={handleCapture}
+      onTouchStart={handleCapture}
     >
       {/* <Helmet>
         <title>Personal Dictionary</title>
