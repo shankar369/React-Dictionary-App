@@ -40,7 +40,11 @@ function App() {
   };
 
   return (
-    <div className="App" onMouseUpCapture={handleCapture}>
+    <div
+      className="App"
+      onMouseUpCapture={handleCapture}
+      onTouchEndCapture={handleCapture}
+    >
       {/* <Helmet>
         <title>Personal Dictionary</title>
       </Helmet> */}
