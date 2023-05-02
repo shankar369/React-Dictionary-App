@@ -18,33 +18,29 @@ function App() {
   const [data, setData] = useState([]);
   const [word, setWord] = useState("");
   const [showSave, setShowSave] = useState(false);
-  const [totalPages, setTotalPages] = useState(1);
-  const [currentPage, setCurrentPage] = useState(
-    parseInt(sessionStorage.getItem("current_page")) || 0
-  );
+  // const [totalPages, setTotalPages] = useState(1);
+  // const [currentPage, setCurrentPage] = useState(
+  //   parseInt(sessionStorage.getItem("current_page")) || 0
+  // );
   const limit = 10;
 
   const [wordNotFound, setWordNotFound] = useState(false);
-  useEffect(() => {
-    getMeanings(
-      limit,
-      setSavedMeanings,
-      setTotalPages,
-      setLoading,
-      currentPage
-    );
-  }, [currentPage]);
+  // useEffect(() => {
+  //   getMeanings(
+  //     limit,
+  //     setSavedMeanings,
+  //     setTotalPages,
+  //     setLoading,
+  //     currentPage
+  //   );
+  // }, [currentPage]);
 
   const handleCapture = () => {
     setSelectedText(window.getSelection().toString());
   };
 
   return (
-    <div
-      className="App"
-      onMouseUpCapture={handleCapture}
-      onTouchStart={handleCapture}
-    >
+    <div className="App" onDoubleClick={handleCapture}>
       {/* <Helmet>
         <title>Personal Dictionary</title>
       </Helmet> */}
@@ -61,7 +57,7 @@ function App() {
       <div className="dictionary-page">
         <DictionaryPage
           selectedText={selectedText}
-          savedMeanings={savedMeanings}
+          // savedMeanings={savedMeanings}
           setLoading={setLoading}
           data={data}
           wordNotFound={wordNotFound}
@@ -78,7 +74,7 @@ function App() {
         {loading && <Loading />}
       </div>
 
-      {data.length === 0 && !wordNotFound && (
+      {/* {data.length === 0 && !wordNotFound && (
         <div>
           <Paginate
             currentPage={currentPage}
@@ -86,7 +82,7 @@ function App() {
             pageCount={totalPages}
           />
         </div>
-      )}
+      )} */}
     </div>
   );
 }

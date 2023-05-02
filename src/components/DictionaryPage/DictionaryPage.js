@@ -1,15 +1,15 @@
 import React from "react";
 
-import SavedMeanings from "./SavedMeanings/SavedMeanings";
+// import SavedMeanings from "./SavedMeanings/SavedMeanings";
 
 import "./DictionaryPage.css";
 import SearchResult from "./SearchResult/SearchResult";
 
 const DictionaryPage = ({
-  savedMeanings,
+  // savedMeanings,
   setLoading,
   data,
-  wordNotFound,
+  // wordNotFound,
   word,
   setData,
   showSave,
@@ -17,13 +17,13 @@ const DictionaryPage = ({
 }) => {
   return (
     <div className="main-page">
-      {savedMeanings.length !== 0 && data.length === 0 && !wordNotFound && (
+      {/* {savedMeanings.length !== 0 && data.length === 0 && !wordNotFound && (
         <SavedMeanings
           savedMeanings={savedMeanings}
           setLoading={setLoading}
           setData={setData}
         />
-      )}
+      )} */}
 
       <SearchResult
         word={word}

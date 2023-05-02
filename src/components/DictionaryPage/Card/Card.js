@@ -5,6 +5,7 @@ import "./Card.css";
 
 const Card = ({ example }) => {
   const { phonetics, meanings } = example;
+  console.log(example,"----------example")
   return (
     <div className="card">
       {phonetics.map((phonetic, i) => (

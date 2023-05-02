@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../Card/Card";
-import { postMeaning } from "../../../api";
+// import { postMeaning } from "../../../api";
 import "./SearchResult.css";
 
 const SearchResult = ({
@@ -20,13 +20,13 @@ const SearchResult = ({
       </div>
 
       <div className="button-group">
-        {showSave && (
+        {/* {showSave && (
           <button
             onClick={() => postMeaning({ word, data }, setLoading, setShowSave)}
           >
             Save
           </button>
-        )}
+        )} */}
         <button onClick={() => setData([])}>back</button>
       </div>
     </div>
