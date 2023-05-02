@@ -5,7 +5,7 @@ function Loading() {
   return (
     <div>
       <div className="lightBox">
-        <div className="loading"> Loading .....</div>
+        <div className="loading"> Searching .....</div>
       </div>
     </div>
   );
