@@ -1,5 +1,10 @@
 .main-page {
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
 }
 .search-form {
   top: 0px;

@@ -4,7 +4,8 @@
 }
 
 .meaning {
-  /* border: 1px solid red; */
+  border: 3px solid green;
+  border-collapse:collapse;
 
   padding: 0.5rem;
   margin-top: 1rem;

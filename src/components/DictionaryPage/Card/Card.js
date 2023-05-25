@@ -8,9 +8,13 @@ const Card = ({ example }) => {
   console.log(example,"----------example")
   return (
     <div className="card">
+      <h1 className="sub-heading">Phonetics</h1>
+
       {phonetics.map((phonetic, i) => (
         <Phonetic key={i} phonetic={phonetic} />
       ))}
+      <div className="sub-heading">Meanings</div>
+
       {meanings.map((meaning, i) => (
         <Meaning key={i} meaning={meaning} />
       ))}

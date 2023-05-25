@@ -12,7 +12,7 @@ const SearchResult = ({
   setShowSave,
 }) =>
 <>
-{data.length !== 0 && <h2 style={{color:'white', marginLeft: '10px'}}>Results for : {word}</h2> }
+{data.length !== 0 && <h2 style={{color:'white'}}>Word : {word}</h2> }
   {data.length !== 0 && (
     <div className="search-result">
       <div className="search-data">

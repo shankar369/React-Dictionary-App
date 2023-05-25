@@ -3,4 +3,6 @@
   color: white;
   padding: 0.5rem;
   margin: 0.5rem;
+  border: 3px solid red;
+  max-width: 900px;
 }

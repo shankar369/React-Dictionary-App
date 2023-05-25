@@ -18,7 +18,7 @@ const Definition = ({ definition }) => {
         </div>
       )}
 
-      {synonyms && (
+      {synonyms?.length !== 0 && (
         <div className="synonyms">
           <div className="sub-heading">Synonyms : </div>
           {synonyms.join(",  ")}

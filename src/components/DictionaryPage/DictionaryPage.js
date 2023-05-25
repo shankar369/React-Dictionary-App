@@ -24,8 +24,6 @@ const DictionaryPage = ({
           setData={setData}
         />
       )} */}
-      <h2>Word : {word}</h2>
-
       <SearchResult
         word={word}
         data={data}

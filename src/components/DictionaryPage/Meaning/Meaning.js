@@ -6,7 +6,6 @@ const Meaning = ({ meaning }) => {
   const { partOfSpeech, definitions } = meaning;
   return (
     <div className="meaning">
-      <div className="sub-heading">Meanings</div>
       <div className="parts-of-speech">
         <span className="sub-heading">Parts of speech: </span>
         {partOfSpeech}
